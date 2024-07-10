@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinaciones de Fantasmas y Evidencias</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <label>Selecciona 3 evidencias:</label>
+            <div class="evidencias">
+                <div class="evidencia sin-seleccionar" data-evidencia="EMF Nivel 5">EMF Nivel 5</div>
+                <div class="evidencia sin-seleccionar" data-evidencia="Escritura fantasma">Escritura fantasma</div>
+                <div class="evidencia sin-seleccionar" data-evidencia="Huellas dactilares">Huellas dactilares</div>
+                <div class="evidencia sin-seleccionar" data-evidencia="Orbes espectrales">Orbes espectrales</div>
+                <div class="evidencia sin-seleccionar" data-evidencia="Spirit Box">Spirit Box</div>
+                <div class="evidencia sin-seleccionar" data-evidencia="Temperaturas bajo cero">Temperaturas bajo cero</div>
+                <div class="evidencia sin-seleccionar" data-evidencia="Proyector D.O.T.S.">Proyector D.O.T.S.</div>
+            </div>
+        </div>
+        <div class="fantasmas" id="fantasmas">
+            {% for fantasma, evidencias_req in combinaciones.items() %}
+                <div class="fantasma" data-evidencias="{{ evidencias_req | join(',') }}">
+                    <h3>{{ fantasma }}</h3>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

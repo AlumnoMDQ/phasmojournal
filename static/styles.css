@@ -1,0 +1,100 @@
+/* styles.css */
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #333; /* Fondo oscuro */
+    color: #ddd; /* Color de texto */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f3f3f3; /* Fondo claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.header {
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.evidencias {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.evidencia {
+    padding: 8px 12px;
+    background-color: #ccc;
+    border: 1px solid #999;
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer;
+    text-decoration: none; /* Sin subrayado */
+    position: relative; /* Para posicionar el ovalo */
+    color: #333; /* Color de texto */
+}
+
+.evidencia.seleccionado {
+    
+    color: white;
+}
+
+.evidencia.excluido {
+    text-decoration: line-through; /* Tachado */
+    color: #999; /* Color gris para evidencia excluida */
+}
+
+.evidencia.seleccionado::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid #4CAF50; /* Borde ovalado para evidencia seleccionada */
+    border-radius: 50%;
+}
+
+.fantasmas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.fantasma {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.fantasma h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333; /* Color de texto */
+}
+
+.active {
+    display: block;
+}
